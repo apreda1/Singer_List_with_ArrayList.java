@@ -1,0 +1,39 @@
+
+package singerlistarraylist;
+
+import java.util.ArrayList;
+
+public class Singers {
+    private ArrayList <String> singer_list = new ArrayList <String>();
+    
+    public void show_singers (){
+        System.out.println("You have " + singer_list.size() + " singers on your album");
+        for (int i = 0; i<singer_list.size(); i++){
+            System.out.println((i+1) + " Singer " + singer_list.get(i));
+        }
+    }
+    public void add_singer (String name){
+        singer_list.add(name);
+        System.out.println("");
+    }
+    public void upgrade_singer (String new_name, int position){
+        singer_list.set(position, new_name);
+        System.out.println("Singer list upgraded..");
+    }
+    public void  singer_remove (int position){
+        String name = singer_list.get(position);
+        singer_list.remove(position);
+        System.out.println(name + "singer removed.. ");
+    }
+    public void singer_search (String singer_name){
+        int position = singer_list.indexOf(singer_name);
+        if (position >= 0){
+            System.out.println("Singer found");
+            System.out.println(singer_name + " name singer has " + (position+1) + " position");
+        }
+        else{
+            System.out.println("Singer couldn't find");
+        }
+    }
+    
+}
